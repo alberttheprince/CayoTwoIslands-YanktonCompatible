@@ -10,7 +10,7 @@ description 'Spawns Cayo Perico alongside Los Santos'
 
 this_is_a_map 'yes'
 
-data_file 'DLC_ITYP_REQUEST' 'stream/ytyp/mads_no_exp_pumps.ytyp' -- Stops petrol pumps from exploding. Credit to MadsL on the FiveM Forums for this.
+-- data_file 'DLC_ITYP_REQUEST' 'stream/ytyp/mads_no_exp_pumps.ytyp' -- Stops petrol pumps from exploding. Credit to MadsL on the FiveM Forums for this.
 
 client_scripts {
     'scripts/twoislands.lua', -- Both Islands Visible At One Time

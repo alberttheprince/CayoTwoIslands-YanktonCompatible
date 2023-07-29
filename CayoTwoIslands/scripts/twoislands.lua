@@ -2,8 +2,6 @@ local islandCoords = vector3(4840.571, -5174.425, 2.0)
 local nearIsland = false
 local isCayoMinimapLoaded = false
 
----- Requests All Island IPLs
-
 Citizen.CreateThread(function()
     RequestIpl("h4_mph4_terrain_occ_09")
     RequestIpl("h4_mph4_terrain_occ_06")
@@ -320,17 +318,6 @@ Citizen.CreateThread(function()
     -- RequestIpl("h4_int_placement_h4_interior_1_dlc_int_02_h4_milo_")
     RequestIpl("h4_int_placement_h4")
 end)
-
-
----- Remove Annoying Flight Music That Drives RPers Insane. Set this to 'false' to reenable it
-
-Citizen.CreateThread(function() 
-	DisableFlightMusic()
- end)
- 
- function DisableFlightMusic()
-	SetAudioFlag('DisableFlightMusic', true)
- end
 
 CreateThread(function()
     SetZoneEnabled(GetZoneFromNameId("PrLog"), false) -- REMOVES SNOW FROM CP
