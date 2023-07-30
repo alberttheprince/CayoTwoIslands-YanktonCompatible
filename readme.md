@@ -1,7 +1,7 @@
-#This is a modified version of intended to work with: (link pending)
+# This is a modified version of intended to work with: (link pending)
 
 
-If you don't want to use North Yankton, please use https://github.com/TayMcKenzieNZ/CayoTwoIslands. 
+# If you don't want to use North Yankton, please use https://github.com/TayMcKenzieNZ/CayoTwoIslands. 
 
 
 # CayoTwoIslands 🏝️
