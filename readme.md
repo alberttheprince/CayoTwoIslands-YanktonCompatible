@@ -1,4 +1,4 @@
-# This is a modified version of Cayo Two Islands intended to work with: (link pending)
+# This is a modified version of Cayo Two Islands intended to work with: https://github.com/alberttheprince/NorthYankton
 
 
 # If you don't want to use North Yankton, please use https://github.com/TayMcKenzieNZ/CayoTwoIslands. 
