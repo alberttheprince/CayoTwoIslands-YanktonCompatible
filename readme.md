@@ -11,7 +11,10 @@ prologue01k.ymap
 prologue01z.ymap
 ```
 
-Thank you to [MissySnowie](https://www.gta5-mods.com/users/MissySnowie) over on GTA5-mods for editing these .ymaps and giving me permission to include them!
+Thank you to [MissySnowie](https://www.gta5-mods.com/users/MissySnowie) over on GTA5-mods for editing these .ymaps and permitting me to include them!
+
+![image](https://github.com/alberttheprince/CayoTwoIslands-YanktonCompatible/assets/85725579/cfb7565e-2bdd-442d-a962-e56f98fe59a3)
+
 
 The files needed to modify North Yankton include the following:
 
