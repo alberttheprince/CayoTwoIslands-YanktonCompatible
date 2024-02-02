@@ -4,6 +4,15 @@
 # If you don't want to use North Yankton, please use https://github.com/dkden7e/CayoTwoIslands. 
 
 
+The following files have been modified:
+
+```
+prologue01k.ymap
+prologue01z.ymap
+```
+
+Thank you to [MissySnowie](https://www.gta5-mods.com/users/MissySnowie) over on GTA5-mods for editing these .ymaps and giving me permission to include them!
+
 The files needed to modify North Yankton include the following:
 
 
