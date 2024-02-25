@@ -2,7 +2,7 @@ local islandCoords = vector3(4840.571, -5174.425, 2.0)
 local nearIsland = false
 local isCayoMinimapLoaded = false
 
-Citizen.CreateThread(function()
+CreateThread(function()
     RequestIpl("h4_mph4_terrain_occ_09")
     RequestIpl("h4_mph4_terrain_occ_06")
     RequestIpl("h4_mph4_terrain_occ_05")
@@ -308,7 +308,7 @@ Citizen.CreateThread(function()
     RequestIpl("h4_islandx")
     RequestIpl("h4_islandx_props_lod")
     RequestIpl("h4_mph4_island_strm_0")
-    -- RequestIpl("h4_islandx_sea_mines")
+    RequestIpl("h4_islandx_sea_mines") -- Uncomment for the sea mines are Cayo
     RequestIpl("h4_mph4_island")
     -- RequestIpl("h4_boatblockers")
     RequestIpl("h4_mph4_island_long_0")
@@ -320,13 +320,15 @@ Citizen.CreateThread(function()
 end)
 
 CreateThread(function()
-    SetZoneEnabled(GetZoneFromNameId("PrLog"), false) -- REMOVES SNOW FROM CP
+    SetZoneEnabled(GetZoneFromNameId("PrLog"), false) -- Ensures no snow is falling in Cayo
     SetScenarioGroupEnabled('Heist_Island_Peds', true)
     SetAmbientZoneListStatePersistent('AZL_DLC_Hei4_Island_Zones', 1, 1) -- Ambient Sounds For Cayo Perico 
     SetAmbientZoneListStatePersistent('AZL_DLC_Hei4_Island_Disabled_Zones', 0, 1) -- Disable Other Ambient Sounds
 
     while true do
         local coords = GetEntityCoords(PlayerPedId())
+
+        -- modifies the wave height, changes here could cause issues with water clipping through Cayo terrain
 
         if #(coords - islandCoords) < 2000.0 then
             if not nearIsland then
@@ -352,10 +354,11 @@ CreateThread(function()
     end
 end)
 
----Handle the minimap loading and unloading
+-- Handle the minimap loading and unloading
+
 CreateThread(function()
     while true do
-        ---We don't need to do something every frame in every cases
+        -- We don't need to do something every frame in every cases
         ---@type integer
         local wait = 185 -- This should be low enough that, when the pause menu is opened, the minimap is toggled to be visible.
 
@@ -366,7 +369,7 @@ CreateThread(function()
                 isCayoMinimapLoaded = false
                 SetToggleMinimapHeistIsland(false)
             end
-            -- We force load the cayo perico minimap
+            -- We force load the Cayo Perico minimap
             SetRadarAsExteriorThisFrame()
             SetRadarAsInteriorThisFrame(GetHashKey("h4_fake_islandx"), 4700.0, -5145.0, 0, 0)
             wait = 0
@@ -377,5 +380,142 @@ CreateThread(function()
             SetToggleMinimapHeistIsland(true)
         end
         Wait(wait)
+    end
+end)
+
+-- Displays all map zones, fixing the 'bug' of showing North Yankton, and instead, showing Cayo Perico
+
+local zones = {
+    ["AIRP"] = "Los Santos International Airport",
+    ["ALAMO"] = "Alamo Sea",
+    ["ALTA"] = "Alta",
+    ["ARMYB"] = "Fort Zancudo",
+    ["BANHAMC"] = "Banham Canyon Dr",
+    ["BANNING"] = "Banning",
+    ["BEACH"] = "Vespucci Beach",
+    ["BHAMCA"] = "Banham Canyon",
+    ["BRADP"] = "Braddock Pass",
+    ["BRADT"] = "Braddock Tunnel",
+    ["BURTON"] = "Burton",
+    ["CALAFB"] = "Calafia Bridge",
+    ["CANNY"] = "Raton Canyon",
+    ["CCREAK"] = "Cassidy Creek",
+    ["CHAMH"] = "Chamberlain Hills",
+    ["CHIL"] = "Vinewood Hills",
+    ["CHU"] = "Chumash",
+    ["CMSW"] = "Chiliad Mountain State Wilderness",
+    ["CYPRE"] = "Cypress Flats",
+    ["DAVIS"] = "Davis",
+    ["DELBE"] = "Del Perro Beach",
+    ["DELPE"] = "Del Perro",
+    ["DELSOL"] = "La Puerta",
+    ["DESRT"] = "Grand Senora Desert",
+    ["DOWNT"] = "Downtown",
+    ["DTVINE"] = "Downtown Vinewood",
+    ["EAST_V"] = "East Vinewood",
+    ["EBURO"] = "El Burro Heights",
+    ["ELGORL"] = "El Gordo Lighthouse",
+    ["ELYSIAN"] = "Elysian Island",
+    ["GALFISH"] = "Galilee",
+    ["GOLF"] = "GWC and Golfing Society",
+    ["GRAPES"] = "Grapeseed",
+    ["GREATC"] = "Great Chaparral",
+    ["HARMO"] = "Harmony",
+    ["HAWICK"] = "Hawick",
+    ["HORS"] = "Diamond Casino And Resort",
+    ["HUMLAB"] = "Humane Labs and Research",
+    ["ISHEIST"] = "Cayo Perico",
+    ["JAIL"] = "Bolingbroke Penitentiary",
+    ["KOREAT"] = "Little Seoul",
+    ["LACT"] = "Land Act Reservoir",
+    ["LAGO"] = "Lago Zancudo",
+    ["LDAM"] = "Land Act Dam",
+    ["LEGSQU"] = "Legion Square",
+    ["LMESA"] = "La Mesa",
+    ["LOSPUER"] = "La Puerta",
+    ["MIRR"] = "Mirror Park",
+    ["MORN"] = "Morningwood",
+    ["MOVIE"] = "Richards Majestic",
+    ["MTCHIL"] = "Mount Chiliad",
+    ["MTGORDO"] = "Mount Gordo",
+    ["MTJOSE"] = "Mount Josiah",
+    ["MURRI"] = "Murrieta Heights",
+    ["NCHU"] = "North Chumash",
+    ["NOOSE"] = "N.O.O.S.E",
+    ["OCEANA"] = "Pacific Ocean",
+    ["PALCOV"] = "Paleto Cove",
+    ["PALETO"] = "Paleto Bay",
+    ["PALFOR"] = "Paleto Forest",
+    ["PALHIGH"] = "Palomino Highlands",
+    ["PALMPOW"] = "Palmer-Taylor Power Station",
+    ["PBLUFF"] = "Pacific Bluffs",
+    ["PBOX"] = "Pillbox Hill",
+    ["PROCOB"] = "Procopio Beach",
+    ["RANCHO"] = "Rancho",
+    ["RGLEN"] = "Richman Glen",
+    ["RICHM"] = "Richman",
+    ["ROCKF"] = "Rockford Hills",
+    ["RTRAK"] = "Redwood Lights Track",
+    ["SANAND"] = "San Andreas",
+    ["SANCHIA"] = "San Chianski Mountain Range",
+    ["SANDY"] = "Sandy Shores",
+    ["SKID"] = "Mission Row",
+    ["SLAB"] = "Stab City",
+    ["STAD"] = "Maze Bank Arena",
+    ["STRAW"] = "Strawberry",
+    ["TATAMO"] = "Tataviam Mountains",
+    ["TERMINA"] = "Terminal",
+    ["TEXTI"] = "Textile City",
+    ["TONGVAH"] = "Tongva Hills",
+    ["TONGVAV"] = "Tongva Valley",
+    ["VCANA"] = "Vespucci Canals",
+    ["VESP"] = "Vespucci",
+    ["VINE"] = "Vinewood",
+    ["WINDF"] = "Ron Alternates Wind Farm",
+    ["WVINE"] = "West Vinewood",
+    ["ZANCUDO"] = "Zancudo River",
+    ["ZP_ORT"] = "Port of South Los Santos",
+    ["ZQ_UAR"] = "Davis Quartz",
+}
+
+function GetZoneNameLabel(zoneName)
+    if zones[zoneName] then
+        return zones[zoneName]
+    else
+        return zoneName
+    end
+end
+
+-- Disables the cheering sounds intended for the Arena Wars update
+
+CreateThread(function()
+    while true do
+        Wait(0)
+            if NetworkIsSessionStarted() then
+            SetStaticEmitterEnabled('SE_DLC_AW_ARENA_CONSTRUCTION_01', false)
+            SetStaticEmitterEnabled('SE_DLC_AW_ARENA_CROWD_BACKGROUND_MAIN', false)
+            SetStaticEmitterEnabled('SE_DLC_AW_CROWD_EXTERIOR_LOBBY', false)
+            SetStaticEmitterEnabled('SE_DLC_AW_CROWD_INTERIOR_LOBBY', false)
+            return
+        end
+    end
+end)
+
+-- Only one interior entity can be active at any given time, so comment out the pair below that you prefer
+
+CreateThread(function()
+    Wait(0)
+
+    local interiorID = 280065
+
+    if IsValidInterior(interiorID) then
+        --ActivateInteriorEntitySet(interiorID, "pearl_necklace_set")
+        --SetInteriorEntitySetColor(interiorID, "pearl_necklace_set", 1)
+        ActivateInteriorEntitySet(interiorID, "panther_set")
+        SetInteriorEntitySetColor(interiorID, "panther_set", 1)
+        --ActivateInteriorEntitySet(interiorID, "pink_diamond_set")
+        --SetInteriorEntitySetColor(interiorID, "pink_diamond_set", 1)
+
+        RefreshInterior(interiorID)
     end
 end)
