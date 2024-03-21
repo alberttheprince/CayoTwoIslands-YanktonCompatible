@@ -331,7 +331,7 @@ CreateThread(function()
         -- modifies the wave height, changes here could cause issues with water clipping through Cayo terrain
 
         if #(coords - islandCoords) < 2000.0 then
-            if not nearIsland and exports.NorthYankton:IsEnabled() then
+            if not nearIsland and not exports.NorthYankton:IsEnabled() then
                 nearIsland = true
                 isCayoMinimapLoaded = true
                 SetAiGlobalPathNodesType(1)
