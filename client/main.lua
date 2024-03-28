@@ -1,3 +1,8 @@
+---- Originally created by TayMcKenzieNZ ----
+---- Modified by AvaN0X, TheIndra and Noors_Nahas of PopcornRP
+
+
+
 local islandCoords = vector3(4840.571, -5174.425, 2.0)
 local nearIsland = false
 local isCayoMinimapLoaded = false
@@ -308,7 +313,7 @@ CreateThread(function()
     RequestIpl("h4_islandx")
     RequestIpl("h4_islandx_props_lod")
     RequestIpl("h4_mph4_island_strm_0")
-    RequestIpl("h4_islandx_sea_mines") -- Uncomment for the sea mines are Cayo
+    RequestIpl("h4_islandx_sea_mines") -- Uncomment to remove the sea mines
     RequestIpl("h4_mph4_island")
     -- RequestIpl("h4_boatblockers")
     RequestIpl("h4_mph4_island_long_0")
@@ -354,7 +359,7 @@ CreateThread(function()
     end
 end)
 
--- Handle the minimap loading and unloading
+-- Handle the minimap loading and unloading, coded by AvaN0x 
 
 CreateThread(function()
     while true do
@@ -383,7 +388,7 @@ CreateThread(function()
     end
 end)
 
--- Displays all map zones, fixing the 'bug' of showing North Yankton, and instead, showing Cayo Perico
+-- Displays all map zones, fixing the 'bug' of showing North Yankton, and instead, showing Cayo Perico & North Yankton
 
 local zones = {
     ["ISHEIST"] = "Cayo Perico",
