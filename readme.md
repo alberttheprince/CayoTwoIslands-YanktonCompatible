@@ -52,6 +52,12 @@ CayoTwoIslands was a passion project of Tay's that began in December of 2020 to 
 
 - Removed snow falling from North Yankton 🌨️
 
+- Opened mansion gates courtesty of TayMcKenzieNZ
+
+- Removed collision for DJ booth courtesy of TayMcKenzieNZ
+
+- Removed collision for boat blockers that would stop you from being able to climb onto the island from the ocean while docking a boat, courtesy of TayMcKenzieNZ
+
 ---------------------------------------
 
 # BUGS 🐛
