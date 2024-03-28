@@ -4,7 +4,6 @@ A slimmed-down version of Cayo intended to work with [North Yankton Enabled](htt
 
 The files needed to modify North Yankton include the following:
 
-## Below is the original readme:
 
 # CayoTwoIslands 🏝️
 
