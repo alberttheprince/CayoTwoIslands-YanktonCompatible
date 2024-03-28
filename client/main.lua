@@ -308,7 +308,7 @@ CreateThread(function()
     RequestIpl("h4_islandx")
     RequestIpl("h4_islandx_props_lod")
     RequestIpl("h4_mph4_island_strm_0")
-    RequestIpl("h4_islandx_sea_mines") -- Uncomment for the sea mines are Cayo
+    RequestIpl("h4_islandx_sea_mines") -- Uncomment if commented and delete the stream file to make the mines appear around the Island
     RequestIpl("h4_mph4_island")
     -- RequestIpl("h4_boatblockers")
     RequestIpl("h4_mph4_island_long_0")
