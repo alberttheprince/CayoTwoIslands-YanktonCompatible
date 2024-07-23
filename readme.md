@@ -217,29 +217,6 @@ Unfortunately you've been scammed and I cannot help you get a refund or anything
 
 **A: NO. It's an island. Fly a plane or drive a boat.**
 
-------------------
-
-**Q: Can I DM you / can you help me personally one on one?**
-
-**A:** No. Don't DM me on the FiveM forums and don't try to add me on Discord.
-
----------------------------------------
-
-# The original license for CayoTwoIslands utilizes a GNU General Public License v3.0
-
-# https://github.com/TayMcKenzieNZ/CayoTwoIslands/blob/main/LICENSE.md
-
-# I'm unsure of why this wordage is in the readme, but I've left it with this note.
-
-# License 📝
-
-This project does not contain a license, therefore you are not allowed to add one and claim it as yours.
-
-You are not allowed to sell this nor re-distribute it. 
-
-You are not allowed to change/add a license. If you want to modify or make an agreement, you can contact me. 
-
-Pull requests are accepted as long as they do not contain breaking changes. 
 
 You can read more here [HERE](https://opensource.stackexchange.com/questions/1720/what-can-i-assume-if-a-publicly-published-project-has-no-license)
 
