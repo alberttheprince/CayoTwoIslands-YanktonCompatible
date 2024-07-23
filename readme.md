@@ -2,8 +2,6 @@
 
 A slimmed-down version of Cayo intended to work with [North Yankton Enabled](https://github.com/alberttheprince/NorthYankton/). Files used with North Yankton have been restored, and if you'd like to be able to use North Yankton with Cayo, then choose this. If you have no interest in using North Yankton, please use [Tay's Original Upload](https://github.com/TayMcKenzieNZ/CayoTwoIslands). I have removed some things I felt were unnecessary (personal opinion stylistically) and will make additional changes so things like ped traffic don't interfere with North Yankton's traffic and vice versa.
 
-The files needed to modify North Yankton include the following:
-
 
 # CayoTwoIslands 🏝️
 
