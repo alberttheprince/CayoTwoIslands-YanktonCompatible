@@ -1,17 +1,13 @@
 ## Cayo Two Islands - North Yankton Compatible
 
-A slimmed-down version of Cayo intended to work with [North Yankton Enabled](https://github.com/alberttheprince/NorthYankton/). Files used with North Yankton have been restored, and if you'd like to be able to use North Yankton with Cayo, then choose this. If you have no interest in using North Yankton, please use [Tay's Original Upload](https://github.com/TayMcKenzieNZ/CayoTwoIslands). I have removed some things I felt were unnecessary (personal opinion stylistically) and will make additional changes so things like ped traffic don't interfere with North Yankton's traffic and vice versa.
+A slimmed-down version of Cayo intended to work with [North Yankton Enabled](https://github.com/alberttheprince/NorthYankton/). Files used with North Yankton have been restored, and if you'd like to be able to use North Yankton with Cayo, then choose this. If you are not interested in using North Yankton, please use [The Unedited Upload](https://github.com/alberttheprince/CayoTwoIslands). I have removed some things I felt were unnecessary (personal opinion stylistically) and will make additional changes so things like ped traffic don't interfere with North Yankton's traffic and vice versa.
+
+Based initially on Tay's Cayo Two Islands, this project was continued following the deletion/selling of the original open-source resource.
 
 
 # CayoTwoIslands 🏝️
 
 Designed for RP and exploration in mind, CayoTwoIslands does everything [Cayo Improvements](https://github.com/TayMcKenzieNZ/CayoImprovements) does, except one important and highly requested feature; no more concealment.
-
-<p align="center">
-    <a href="https://github.com/TayMcKenzieNZ/CayoTwoIslands/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-blue.svg" alt="License"></a>
-    <a href="https://github.com/TayMcKenzieNZ/CayoTwoIslands/stargazers"><img src="https://img.shields.io/github/stars/TayMcKenzieNZ/CayoTwoIslands.svg?style=social&label=Stars"></a>
-    <a href="https://github.com/TayMcKenzieNZ/CayoTwoIslands/network/members"><img src="https://img.shields.io/github/forks/TayMcKenzieNZ/CayoTwoIslands.svg?style=social&label=Forks"></a>
-</p>
 
 ---------------------------------------
 
@@ -194,28 +190,4 @@ You will also need to comment out main_peds.lua if you want to disable them comp
 **A:** This should be fixed, as the Cfx.re team have pushed an update on February 8th 2022 which implemented some CPacketIPL changes for the replay editor. This should fix replay editor issues on build 2189 and above with common IPL loading resources.
 
 Read about it [here](https://forum.cfx.re/t/cfx-re-client-update-fivem-redm-for-february-8th-2022/4813410)
-
-------------
-
-**Q: I bought something from someone that looked similar to this?**
-
-**A:** Yikes. My resources are always free and some people pry on free resources to sell them off as their own, usually on some shady website or their discord servers. 
-
-Unfortunately you've been scammed and I cannot help you get a refund or anything of that manner.
-
-------------
-
-**Q: Can you move the island to...**
-
-**A: NO.**
-
-------------------
-
-**Q: My server has a bridge going to Cayo Perico but there's trees in the way, can you remove them?**
-
-**A: NO. It's an island. Fly a plane or drive a boat.**
-
-
-You can read more here [HERE](https://opensource.stackexchange.com/questions/1720/what-can-i-assume-if-a-publicly-published-project-has-no-license)
-
 
