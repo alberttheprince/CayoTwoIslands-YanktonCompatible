@@ -184,7 +184,7 @@ Read about it [here](https://forum.cfx.re/t/cfx-re-client-update-fivem-redm-for-
 
 # Credits:
 
-- This resource was originally created by [Tay NcKenzie](https://github.com/TayMcKenzieNZ)
+- This resource was originally created by [Tay McKenzie](https://github.com/TayMcKenzieNZ)
 - PrinceAlbert for edits to provide compatability with North Yankton
 - [Popcorn RP community](https://discord.gg/popcornroleplay) for helping me debug/test
 
